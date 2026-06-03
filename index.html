@@ -1,0 +1,1831 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Merina Sara Thomas — Finance & Audit Professional</title>
+<meta name="description" content="ACCA part-qualified finance professional with Big 4 Deloitte audit experience, advanced analytics skills, and a Gold Medal academic record. Available in Ireland.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+/* ═══════════════════════════════════════════
+   DESIGN SYSTEM — CSS CUSTOM PROPERTIES
+   ═══════════════════════════════════════════ */
+:root {
+  /* Light mode */
+  --bg-primary: #faf9f7;
+  --bg-secondary: #f1efe9;
+  --bg-card: #ffffff;
+  --bg-glass: rgba(255,255,255,0.55);
+  --bg-glass-border: rgba(255,255,255,0.35);
+
+  --purple-deep: #4a2d7a;
+  --purple: #5c3d8f;
+  --purple-mid: #7b52b8;
+  --purple-light: #ede8f7;
+  --purple-pale: #f7f4fc;
+  --purple-glow: rgba(92,61,143,0.15);
+
+  --ink: #1a1520;
+  --ink-mid: #3d3547;
+  --muted: #8a7f99;
+  --border: #e2dded;
+
+  --accent-gold: #d4a843;
+  --accent-gold-light: #fdf6e3;
+
+  --serif: 'Cormorant Garamond', Georgia, serif;
+  --sans: 'Inter', system-ui, sans-serif;
+
+  --shadow-sm: 0 2px 8px rgba(92,61,143,0.06);
+  --shadow-md: 0 8px 32px rgba(92,61,143,0.08);
+  --shadow-lg: 0 16px 64px rgba(92,61,143,0.12);
+  --shadow-glow: 0 0 40px rgba(123,82,184,0.15);
+
+  --transition-fast: 0.2s cubic-bezier(0.4,0,0.2,1);
+  --transition-smooth: 0.4s cubic-bezier(0.4,0,0.2,1);
+  --transition-spring: 0.5s cubic-bezier(0.34,1.56,0.64,1);
+}
+
+/* ═══════════════════════════════════════════
+   DARK MODE
+   ═══════════════════════════════════════════ */
+[data-theme="dark"] {
+  --bg-primary: #0d0a12;
+  --bg-secondary: #151020;
+  --bg-card: #1a1525;
+  --bg-glass: rgba(26,21,37,0.7);
+  --bg-glass-border: rgba(123,82,184,0.2);
+
+  --purple-light: #231a35;
+  --purple-pale: #1a1228;
+  --purple-glow: rgba(123,82,184,0.2);
+
+  --ink: #f0ecf5;
+  --ink-mid: #c4b8d8;
+  --muted: #7a6e92;
+  --border: #2a2238;
+
+  --accent-gold-light: #1f1a10;
+
+  --shadow-sm: 0 2px 8px rgba(0,0,0,0.3);
+  --shadow-md: 0 8px 32px rgba(0,0,0,0.4);
+  --shadow-lg: 0 16px 64px rgba(0,0,0,0.5);
+  --shadow-glow: 0 0 60px rgba(123,82,184,0.25);
+}
+
+/* ═══════════════════════════════════════════
+   RESET & BASE
+   ═══════════════════════════════════════════ */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: var(--sans);
+  background: var(--bg-primary);
+  color: var(--ink);
+  line-height: 1.6;
+  overflow-x: hidden;
+  transition: background var(--transition-smooth), color var(--transition-smooth);
+}
+
+img { max-width: 100%; height: auto; display: block; }
+
+/* ═══════════════════════════════════════════
+   PARTICLE CANVAS
+   ═══════════════════════════════════════════ */
+#particles-canvas {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* ═══════════════════════════════════════════
+   DARK MODE TOGGLE
+   ═══════════════════════════════════════════ */
+.theme-toggle {
+  position: fixed;
+  bottom: 2rem; right: 2rem;
+  z-index: 200;
+  width: 52px; height: 52px;
+  border-radius: 50%;
+  border: 1px solid var(--border);
+  background: var(--bg-glass);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1.25rem;
+  box-shadow: var(--shadow-md);
+  transition: all var(--transition-fast);
+}
+.theme-toggle:hover {
+  transform: scale(1.1) rotate(15deg);
+  box-shadow: var(--shadow-glow);
+  border-color: var(--purple-mid);
+}
+
+/* ═══════════════════════════════════════════
+   NAV — GLASSMORPHISM
+   ═══════════════════════════════════════════ */
+nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 1rem 4rem;
+  background: var(--bg-glass);
+  backdrop-filter: blur(20px) saturate(1.8);
+  -webkit-backdrop-filter: blur(20px) saturate(1.8);
+  border-bottom: 1px solid var(--bg-glass-border);
+  transition: all var(--transition-smooth);
+}
+nav.scrolled {
+  padding: 0.75rem 4rem;
+  box-shadow: var(--shadow-md);
+}
+.nav-logo {
+  font-family: var(--serif);
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: var(--purple);
+  letter-spacing: 0.02em;
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+.nav-logo:hover { color: var(--purple-mid); }
+.nav-links { display: flex; gap: 2.25rem; list-style: none; }
+.nav-links a {
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+  color: var(--ink-mid);
+  text-decoration: none;
+  transition: color var(--transition-fast);
+  position: relative;
+  padding: 0.25rem 0;
+}
+.nav-links a::after {
+  content: '';
+  position: absolute; bottom: 0; left: 0; right: 0; height: 2px;
+  background: linear-gradient(90deg, var(--purple), var(--purple-mid));
+  border-radius: 1px;
+  transform: scaleX(0); transform-origin: left;
+  transition: transform 0.3s cubic-bezier(0.4,0,0.2,1);
+}
+.nav-links a:hover { color: var(--purple); }
+.nav-links a:hover::after { transform: scaleX(1); }
+
+.hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; background: none; border: none; padding: 4px; }
+.hamburger span { width: 24px; height: 2px; background: var(--ink); transition: all 0.3s; display: block; }
+.hamburger.active span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
+.hamburger.active span:nth-child(2) { opacity: 0; }
+.hamburger.active span:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
+
+/* ═══════════════════════════════════════════
+   HERO
+   ═══════════════════════════════════════════ */
+#hero {
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  padding: 0 4rem;
+  padding-top: 80px;
+  position: relative;
+  overflow: hidden;
+}
+#hero::before {
+  content: '';
+  position: absolute; top: 0; right: 0;
+  width: 48%; height: 100%;
+  background: linear-gradient(135deg, var(--purple-pale), var(--purple-light));
+  clip-path: polygon(12% 0%, 100% 0%, 100% 100%, 0% 100%);
+  z-index: 0;
+  transition: background var(--transition-smooth);
+}
+/* Floating orbs for depth */
+#hero::after {
+  content: '';
+  position: absolute;
+  width: 400px; height: 400px;
+  background: radial-gradient(circle, rgba(123,82,184,0.08), transparent 70%);
+  top: 10%; left: -5%;
+  border-radius: 50%;
+  animation: float-orb 8s ease-in-out infinite;
+  pointer-events: none;
+}
+@keyframes float-orb {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(30px, -20px) scale(1.1); }
+}
+
+.hero-text { position: relative; z-index: 2; }
+.hero-eyebrow {
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--purple);
+  margin-bottom: 1.25rem;
+  display: flex; align-items: center; gap: 0.75rem;
+  opacity: 0; animation: slideUp 0.7s 0.2s forwards;
+}
+.hero-eyebrow::before {
+  content: ''; width: 32px; height: 1px;
+  background: linear-gradient(90deg, var(--purple), transparent);
+}
+.hero-name {
+  font-family: var(--serif);
+  font-size: clamp(3rem, 6vw, 5.5rem);
+  font-weight: 300;
+  line-height: 1.05;
+  color: var(--ink);
+  margin-bottom: 1.5rem;
+  opacity: 0; animation: slideUp 0.7s 0.4s forwards;
+}
+.hero-name em { font-style: italic; color: var(--purple); }
+.hero-desc {
+  font-size: 1rem;
+  color: var(--ink-mid);
+  max-width: 440px;
+  line-height: 1.8;
+  margin-bottom: 2.5rem;
+  opacity: 0; animation: slideUp 0.7s 0.6s forwards;
+}
+.hero-cta {
+  display: flex; gap: 1rem; flex-wrap: wrap;
+  opacity: 0; animation: slideUp 0.7s 0.8s forwards;
+}
+.btn-primary {
+  display: inline-flex; align-items: center; gap: 0.5rem;
+  padding: 0.9rem 2.2rem;
+  background: linear-gradient(135deg, var(--purple), var(--purple-mid));
+  color: #fff;
+  font-family: var(--sans);
+  font-size: 0.78rem;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  text-decoration: none;
+  border: none;
+  position: relative;
+  overflow: hidden;
+  transition: all var(--transition-fast);
+  cursor: pointer;
+}
+.btn-primary::before {
+  content: '';
+  position: absolute; inset: 0;
+  background: linear-gradient(135deg, var(--purple-mid), var(--purple-deep));
+  opacity: 0; transition: opacity 0.3s;
+}
+.btn-primary:hover::before { opacity: 1; }
+.btn-primary:hover { transform: translateY(-3px); box-shadow: 0 8px 24px rgba(92,61,143,0.35); }
+.btn-primary span { position: relative; z-index: 1; }
+.btn-secondary {
+  display: inline-flex; align-items: center; gap: 0.5rem;
+  padding: 0.9rem 2.2rem;
+  border: 1.5px solid var(--border);
+  color: var(--ink-mid);
+  font-family: var(--sans);
+  font-size: 0.78rem;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  text-decoration: none;
+  background: transparent;
+  transition: all var(--transition-fast);
+  cursor: pointer;
+}
+.btn-secondary:hover {
+  border-color: var(--purple);
+  color: var(--purple);
+  transform: translateY(-3px);
+  box-shadow: 0 4px 16px var(--purple-glow);
+}
+
+.hero-visual {
+  position: relative; z-index: 2;
+  display: flex; justify-content: center; align-items: center;
+  opacity: 0; animation: slideUp 0.8s 0.6s forwards;
+}
+/* Glassmorphism hero card */
+.hero-card {
+  background: var(--bg-glass);
+  backdrop-filter: blur(24px) saturate(1.6);
+  -webkit-backdrop-filter: blur(24px) saturate(1.6);
+  border: 1px solid var(--bg-glass-border);
+  border-radius: 16px;
+  padding: 2.5rem;
+  max-width: 360px;
+  box-shadow: var(--shadow-lg);
+  position: relative;
+  transition: all var(--transition-smooth);
+}
+.hero-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-glow), var(--shadow-lg);
+}
+.hero-card::before {
+  content: '';
+  position: absolute; top: -1px; left: -1px; right: -1px; bottom: -1px;
+  border-radius: 17px;
+  background: linear-gradient(135deg, rgba(123,82,184,0.3), transparent 50%, rgba(123,82,184,0.1));
+  z-index: -1;
+  pointer-events: none;
+}
+.hc-tag {
+  font-size: 0.62rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--purple);
+  background: var(--purple-light);
+  display: inline-block;
+  padding: 0.3rem 0.8rem;
+  border-radius: 20px;
+  margin-bottom: 1.25rem;
+}
+.hc-stat { margin-bottom: 1.25rem; }
+.hc-stat-num {
+  font-family: var(--serif);
+  font-size: 2.8rem;
+  font-weight: 300;
+  color: var(--purple);
+  line-height: 1;
+}
+.hc-stat-label { font-size: 0.78rem; color: var(--muted); margin-top: 0.3rem; }
+.hc-divider {
+  border: none;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--border), transparent);
+  margin: 1.25rem 0;
+}
+.hc-row { display: flex; gap: 1.5rem; }
+.hc-mini-num {
+  font-family: var(--serif);
+  font-size: 1.8rem;
+  font-weight: 300;
+  color: var(--ink);
+}
+.hc-mini-label { font-size: 0.72rem; color: var(--muted); margin-top: 0.15rem; }
+
+/* ═══════════════════════════════════════════
+   SECTION COMMONS
+   ═══════════════════════════════════════════ */
+section {
+  padding: 7rem 4rem;
+  position: relative;
+  transition: background var(--transition-smooth);
+}
+section:nth-child(even) { background: var(--bg-secondary); }
+.section-header { margin-bottom: 4rem; }
+.section-label {
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--purple);
+  display: flex; align-items: center; gap: 0.75rem;
+  margin-bottom: 0.75rem;
+}
+.section-label::before {
+  content: ''; width: 24px; height: 1px;
+  background: linear-gradient(90deg, var(--purple), transparent);
+}
+.section-title {
+  font-family: var(--serif);
+  font-size: clamp(2rem, 4vw, 3.25rem);
+  font-weight: 300;
+  line-height: 1.1;
+  color: var(--ink);
+}
+.section-title em { font-style: italic; color: var(--purple); }
+
+/* ═══════════════════════════════════════════
+   ABOUT
+   ═══════════════════════════════════════════ */
+#about .about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.4fr;
+  gap: 5rem;
+  align-items: start;
+}
+.about-photo-wrapper {
+  position: relative;
+  margin-bottom: 2rem;
+}
+.about-photo {
+  width: 200px; height: 240px;
+  object-fit: cover;
+  object-position: center top;
+  border-radius: 12px;
+  border: 3px solid var(--bg-glass-border);
+  box-shadow: var(--shadow-md);
+  transition: all var(--transition-smooth);
+}
+.about-photo:hover {
+  transform: scale(1.03);
+  box-shadow: var(--shadow-glow);
+}
+.about-photo-wrapper::after {
+  content: '';
+  position: absolute;
+  top: 12px; left: 12px;
+  width: 200px; height: 240px;
+  border-radius: 12px;
+  border: 2px solid var(--purple-mid);
+  opacity: 0.25;
+  z-index: -1;
+  transition: all var(--transition-smooth);
+}
+.about-photo-wrapper:hover::after {
+  top: 8px; left: 8px;
+  opacity: 0.4;
+}
+
+.about-contact-item {
+  display: flex; align-items: flex-start; gap: 0.75rem;
+  margin-bottom: 1rem;
+}
+.aci-icon {
+  width: 32px; height: 32px; min-width: 32px;
+  background: var(--purple-light);
+  border-radius: 8px;
+  display: flex; align-items: center; justify-content: center;
+  color: var(--purple);
+  font-size: 0.85rem;
+  margin-top: 0.1rem;
+  transition: all var(--transition-fast);
+}
+.about-contact-item:hover .aci-icon {
+  background: var(--purple);
+  color: white;
+  transform: scale(1.1);
+}
+.aci-text { font-size: 0.88rem; color: var(--ink-mid); line-height: 1.5; }
+.aci-text a { color: var(--purple); text-decoration: none; transition: color var(--transition-fast); }
+.aci-text a:hover { color: var(--purple-mid); }
+
+.about-p { font-size: 1rem; color: var(--ink-mid); line-height: 1.85; margin-bottom: 1.25rem; }
+
+.about-highlights {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 1px;
+  background: var(--border);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  overflow: hidden;
+  margin-top: 2.5rem;
+}
+.ah-item {
+  background: var(--bg-card);
+  padding: 1.5rem;
+  transition: all var(--transition-fast);
+}
+.ah-item:hover { background: var(--purple-pale); }
+section:nth-child(even) .ah-item { background: var(--bg-secondary); }
+section:nth-child(even) .ah-item:hover { background: var(--purple-pale); }
+.ah-num {
+  font-family: var(--serif);
+  font-size: 2.2rem;
+  font-weight: 300;
+  color: var(--purple);
+  line-height: 1;
+  margin-bottom: 0.4rem;
+}
+.ah-label { font-size: 0.8rem; color: var(--muted); }
+
+/* ═══════════════════════════════════════════
+   EXPERIENCE TIMELINE
+   ═══════════════════════════════════════════ */
+.timeline { position: relative; padding-left: 3rem; }
+.timeline::before {
+  content: '';
+  position: absolute; left: 0; top: 0.75rem; bottom: 0;
+  width: 2px;
+  background: linear-gradient(to bottom, var(--purple), var(--purple-mid), var(--border));
+  border-radius: 1px;
+}
+.tl-item {
+  position: relative;
+  margin-bottom: 3.5rem;
+  opacity: 0; transform: translateY(24px);
+  transition: opacity 0.6s, transform 0.6s;
+}
+.tl-item.visible { opacity: 1; transform: none; }
+.tl-dot {
+  position: absolute; left: -3rem;
+  top: 0.55rem;
+  width: 12px; height: 12px;
+  border-radius: 50%;
+  background: var(--purple);
+  border: 3px solid var(--bg-primary);
+  box-shadow: 0 0 0 2px var(--purple), 0 0 12px var(--purple-glow);
+  transition: all var(--transition-fast);
+}
+.tl-item:hover .tl-dot {
+  box-shadow: 0 0 0 2px var(--purple), 0 0 20px rgba(123,82,184,0.4);
+  transform: scale(1.3);
+}
+section:nth-child(even) .tl-dot { border-color: var(--bg-secondary); }
+.tl-period {
+  font-size: 0.7rem;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 0.5rem;
+}
+.tl-role {
+  font-family: var(--serif);
+  font-size: 1.45rem;
+  font-weight: 400;
+  color: var(--ink);
+  margin-bottom: 0.2rem;
+  line-height: 1.2;
+}
+.tl-company {
+  font-size: 0.85rem;
+  color: var(--purple);
+  font-weight: 500;
+  margin-bottom: 1rem;
+}
+.tl-bullets { list-style: none; }
+.tl-bullets li {
+  font-size: 0.88rem;
+  color: var(--ink-mid);
+  line-height: 1.75;
+  padding-left: 1.25rem;
+  position: relative;
+  margin-bottom: 0.4rem;
+}
+.tl-bullets li::before {
+  content: '';
+  position: absolute; left: 0; top: 0.65em;
+  width: 6px; height: 6px;
+  border-radius: 50%;
+  background: var(--purple-light);
+  border: 1px solid var(--purple);
+}
+
+/* ═══════════════════════════════════════════
+   EDUCATION
+   ═══════════════════════════════════════════ */
+.edu-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+}
+.edu-card {
+  background: var(--bg-glass);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--bg-glass-border);
+  border-radius: 16px;
+  padding: 2.25rem;
+  position: relative;
+  overflow: hidden;
+  opacity: 0; transform: translateY(24px);
+  transition: opacity 0.5s, transform 0.5s, box-shadow var(--transition-fast);
+}
+.edu-card.visible { opacity: 1; transform: none; }
+.edu-card:hover { box-shadow: var(--shadow-glow); }
+.edu-card::after {
+  content: '';
+  position: absolute; top: 0; left: 0;
+  width: 3px; height: 0;
+  background: linear-gradient(to bottom, var(--purple), var(--purple-mid));
+  border-radius: 0 0 2px 2px;
+  transition: height 0.6s 0.3s;
+}
+.edu-card.visible::after { height: 100%; }
+.edu-period {
+  font-size: 0.7rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 0.75rem;
+}
+.edu-degree {
+  font-family: var(--serif);
+  font-size: 1.3rem;
+  font-weight: 400;
+  color: var(--ink);
+  line-height: 1.3;
+  margin-bottom: 0.5rem;
+}
+.edu-school {
+  font-size: 0.85rem;
+  color: var(--purple);
+  font-weight: 500;
+  margin-bottom: 1rem;
+}
+.edu-badge {
+  display: inline-block;
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  background: linear-gradient(135deg, var(--purple-light), var(--purple-pale));
+  color: var(--purple);
+  padding: 0.3rem 0.75rem;
+  border-radius: 20px;
+  margin-bottom: 1rem;
+}
+.edu-modules {
+  font-size: 0.82rem;
+  color: var(--muted);
+  line-height: 1.7;
+}
+
+/* Professional Qualification Bar */
+.acca-bar {
+  margin-top: 3rem;
+  background: var(--bg-glass);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--bg-glass-border);
+  border-radius: 16px;
+  padding: 2rem 2.5rem;
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  box-shadow: var(--shadow-sm);
+  transition: all var(--transition-fast);
+}
+.acca-bar:hover { box-shadow: var(--shadow-glow); }
+.acca-num {
+  font-family: var(--serif);
+  font-size: 2.5rem;
+  font-weight: 300;
+  color: var(--purple);
+  line-height: 1;
+}
+.acca-num span { font-size: 1.2rem; }
+.acca-label { font-size: 0.75rem; color: var(--muted); margin-top: 0.25rem; }
+.acca-divider { width: 1px; height: 60px; background: var(--border); }
+.acca-title { font-size: 1rem; font-weight: 500; color: var(--ink); }
+.acca-subtitle { font-size: 0.82rem; color: var(--muted); margin-top: 0.2rem; }
+
+/* ═══════════════════════════════════════════
+   CERTIFICATIONS — PHOTO GALLERY
+   ═══════════════════════════════════════════ */
+.cert-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+.cert-card {
+  background: var(--bg-glass);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--bg-glass-border);
+  border-radius: 16px;
+  padding: 1.75rem;
+  position: relative;
+  overflow: hidden;
+  opacity: 0; transform: translateY(24px);
+  transition: opacity 0.4s, transform 0.4s, box-shadow var(--transition-fast);
+}
+.cert-card.visible { opacity: 1; transform: none; }
+.cert-card:hover {
+  box-shadow: var(--shadow-glow);
+  transform: translateY(-4px) !important;
+}
+.cert-icon {
+  width: 40px; height: 40px;
+  background: var(--purple-light);
+  border-radius: 10px;
+  display: flex; align-items: center; justify-content: center;
+  color: var(--purple);
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+  transition: all var(--transition-fast);
+}
+.cert-card:hover .cert-icon {
+  background: var(--purple);
+  color: white;
+  transform: scale(1.1) rotate(-5deg);
+}
+.cert-title { font-size: 0.92rem; font-weight: 500; color: var(--ink); margin-bottom: 0.4rem; line-height: 1.4; }
+.cert-org { font-size: 0.78rem; color: var(--muted); }
+
+/* ═══════════════════════════════════════════
+   SKILLS
+   ═══════════════════════════════════════════ */
+.skills-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+}
+.skill-group { margin-bottom: 2.5rem; }
+.skill-group-title {
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--purple);
+  margin-bottom: 1.25rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid var(--border);
+}
+.skill-tags { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+.skill-tag {
+  font-size: 0.8rem;
+  color: var(--ink-mid);
+  background: var(--bg-glass);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 0.45rem 0.95rem;
+  transition: all var(--transition-fast);
+  cursor: default;
+}
+.skill-tag:hover {
+  background: linear-gradient(135deg, var(--purple), var(--purple-mid));
+  color: #fff;
+  border-color: var(--purple);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px var(--purple-glow);
+}
+.lang-item {
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 0.7rem 0;
+  border-bottom: 1px solid var(--border);
+  font-size: 0.88rem;
+  transition: all var(--transition-fast);
+}
+.lang-item:hover { padding-left: 0.5rem; color: var(--purple); }
+.lang-level {
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+/* ═══════════════════════════════════════════
+   ACHIEVEMENTS — PHOTO GALLERY
+   ═══════════════════════════════════════════ */
+.ach-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 1.5rem;
+}
+.ach-card {
+  background: var(--bg-glass);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--bg-glass-border);
+  border-radius: 16px;
+  overflow: hidden;
+  opacity: 0; transform: translateY(24px);
+  transition: opacity 0.5s, transform 0.5s, box-shadow var(--transition-fast);
+}
+.ach-card.visible { opacity: 1; transform: none; }
+.ach-card:hover {
+  box-shadow: var(--shadow-glow);
+  transform: translateY(-4px) !important;
+}
+.ach-card-img {
+  width: 100%;
+  height: 260px;
+  object-fit: cover;
+  cursor: pointer;
+  transition: transform 0.5s;
+}
+.ach-card:hover .ach-card-img { transform: scale(1.05); }
+.ach-card-img-wrapper {
+  overflow: hidden;
+  position: relative;
+}
+.ach-card-img-wrapper::after {
+  content: '🔍 Click to View';
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  padding: 0.75rem;
+  background: linear-gradient(transparent, rgba(0,0,0,0.6));
+  color: white;
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  text-align: center;
+  opacity: 0;
+  transition: opacity var(--transition-fast);
+}
+.ach-card:hover .ach-card-img-wrapper::after { opacity: 1; }
+.ach-card-body { padding: 1.5rem; }
+.ach-card-index {
+  font-family: var(--serif);
+  font-size: 0.85rem;
+  font-weight: 400;
+  color: var(--purple);
+  opacity: 0.6;
+  margin-bottom: 0.3rem;
+}
+.ach-card-title { font-size: 0.95rem; font-weight: 500; color: var(--ink); margin-bottom: 0.3rem; line-height: 1.35; }
+.ach-card-desc { font-size: 0.82rem; color: var(--muted); line-height: 1.6; }
+
+/* Legacy ach-list for non-photo items */
+.ach-list { display: flex; flex-direction: column; gap: 1px; background: var(--border); border-radius: 12px; overflow: hidden; border: 1px solid var(--border); margin-top: 2rem; }
+.ach-item {
+  display: flex; gap: 2rem; align-items: flex-start;
+  background: var(--bg-card);
+  padding: 1.5rem 1.75rem;
+  opacity: 0; transform: translateX(-20px);
+  transition: opacity 0.4s, transform 0.4s, background var(--transition-fast);
+}
+.ach-item.visible { opacity: 1; transform: none; }
+.ach-item:hover { background: var(--purple-pale); }
+section:nth-child(even) .ach-item { background: var(--bg-secondary); }
+section:nth-child(even) .ach-item:hover { background: var(--purple-pale); }
+.ach-index {
+  font-family: var(--serif);
+  font-size: 1.4rem;
+  font-weight: 300;
+  color: var(--purple);
+  opacity: 0.4;
+  min-width: 2rem;
+  line-height: 1;
+}
+.ach-title { font-size: 0.92rem; font-weight: 500; color: var(--ink); margin-bottom: 0.25rem; }
+.ach-desc { font-size: 0.82rem; color: var(--muted); line-height: 1.6; }
+
+/* ═══════════════════════════════════════════
+   LIGHTBOX
+   ═══════════════════════════════════════════ */
+.lightbox-overlay {
+  position: fixed; inset: 0;
+  background: rgba(0,0,0,0.92);
+  z-index: 1000;
+  display: flex; align-items: center; justify-content: center;
+  opacity: 0; visibility: hidden;
+  transition: all 0.3s;
+  cursor: zoom-out;
+}
+.lightbox-overlay.active { opacity: 1; visibility: visible; }
+.lightbox-img {
+  max-width: 90vw;
+  max-height: 90vh;
+  object-fit: contain;
+  border-radius: 8px;
+  box-shadow: 0 0 80px rgba(123,82,184,0.3);
+  transform: scale(0.9);
+  transition: transform 0.4s cubic-bezier(0.34,1.56,0.64,1);
+}
+.lightbox-overlay.active .lightbox-img { transform: scale(1); }
+.lightbox-close {
+  position: absolute; top: 2rem; right: 2rem;
+  width: 44px; height: 44px;
+  background: rgba(255,255,255,0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255,255,255,0.2);
+  border-radius: 50%;
+  color: white;
+  font-size: 1.2rem;
+  cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
+  transition: all var(--transition-fast);
+}
+.lightbox-close:hover { background: rgba(255,255,255,0.2); transform: rotate(90deg); }
+.lightbox-caption {
+  position: absolute; bottom: 2rem; left: 50%; transform: translateX(-50%);
+  color: rgba(255,255,255,0.7);
+  font-size: 0.85rem;
+  text-align: center;
+  max-width: 600px;
+}
+
+/* ═══════════════════════════════════════════
+   CONTACT
+   ═══════════════════════════════════════════ */
+#contact {
+  background: var(--ink) !important;
+}
+[data-theme="dark"] #contact {
+  background: #080510 !important;
+}
+#contact .section-label { color: var(--purple-mid); }
+#contact .section-label::before { background: var(--purple-mid); }
+#contact .section-title { color: #fff; }
+#contact .section-title em { color: var(--purple-mid); }
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 5rem;
+  align-items: start;
+}
+.contact-text { font-size: 1rem; color: rgba(255,255,255,0.5); line-height: 1.85; margin-bottom: 2.5rem; }
+.contact-links { display: flex; flex-direction: column; gap: 1rem; }
+.cl-item {
+  display: flex; align-items: center; gap: 1rem;
+  text-decoration: none;
+  padding: 1rem 1.25rem;
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 12px;
+  transition: all var(--transition-fast);
+  background: rgba(255,255,255,0.02);
+}
+.cl-item:hover {
+  border-color: var(--purple-mid);
+  background: rgba(123,82,184,0.1);
+  transform: translateX(4px);
+}
+.cl-icon {
+  width: 40px; height: 40px;
+  background: rgba(123,82,184,0.15);
+  border-radius: 10px;
+  display: flex; align-items: center; justify-content: center;
+  color: var(--purple-mid);
+  font-size: 1rem;
+  flex-shrink: 0;
+  transition: all var(--transition-fast);
+}
+.cl-item:hover .cl-icon { background: var(--purple-mid); color: white; }
+.cl-text { font-size: 0.88rem; color: rgba(255,255,255,0.7); }
+
+.cf-group { margin-bottom: 1.5rem; }
+.cf-group label {
+  display: block;
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.35);
+  margin-bottom: 0.5rem;
+}
+.cf-group input,
+.cf-group textarea {
+  width: 100%;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 10px;
+  color: #fff;
+  font-family: var(--sans);
+  font-size: 0.88rem;
+  padding: 0.9rem 1rem;
+  outline: none;
+  transition: all var(--transition-fast);
+  resize: none;
+}
+.cf-group input:focus,
+.cf-group textarea:focus {
+  border-color: var(--purple-mid);
+  box-shadow: 0 0 0 3px rgba(123,82,184,0.15);
+}
+.cf-group input::placeholder,
+.cf-group textarea::placeholder { color: rgba(255,255,255,0.15); }
+.btn-send {
+  width: 100%;
+  padding: 1rem;
+  background: linear-gradient(135deg, var(--purple), var(--purple-mid));
+  border: none;
+  border-radius: 10px;
+  color: #fff;
+  font-family: var(--sans);
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  position: relative;
+  overflow: hidden;
+}
+.btn-send::before {
+  content: '';
+  position: absolute; inset: 0;
+  background: linear-gradient(135deg, var(--purple-mid), var(--purple));
+  opacity: 0; transition: opacity 0.3s;
+}
+.btn-send:hover::before { opacity: 1; }
+.btn-send:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(123,82,184,0.4); }
+.btn-send span { position: relative; z-index: 1; }
+.send-note { font-size: 0.75rem; color: rgba(255,255,255,0.35); text-align: center; margin-top: 0.75rem; }
+
+/* ═══════════════════════════════════════════
+   FOOTER
+   ═══════════════════════════════════════════ */
+footer {
+  background: #080510;
+  text-align: center;
+  padding: 2rem 4rem;
+  font-size: 0.75rem;
+  color: rgba(255,255,255,0.2);
+  letter-spacing: 0.05em;
+  border-top: 1px solid rgba(255,255,255,0.05);
+}
+[data-theme="dark"] footer { background: #050308; }
+
+/* ═══════════════════════════════════════════
+   ANIMATIONS
+   ═══════════════════════════════════════════ */
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+@keyframes shimmer {
+  0% { background-position: -200% center; }
+  100% { background-position: 200% center; }
+}
+@keyframes pulse {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(123,82,184,0.3); }
+  50% { box-shadow: 0 0 0 10px rgba(123,82,184,0); }
+}
+
+/* Scroll reveal */
+.reveal { opacity: 0; transform: translateY(28px); transition: opacity 0.6s, transform 0.6s; }
+.reveal.visible { opacity: 1; transform: none; }
+
+/* Stagger children */
+.stagger-1 { transition-delay: 0.05s; }
+.stagger-2 { transition-delay: 0.1s; }
+.stagger-3 { transition-delay: 0.15s; }
+.stagger-4 { transition-delay: 0.2s; }
+.stagger-5 { transition-delay: 0.25s; }
+
+/* Animated counter number */
+.count-up { display: inline-block; }
+
+/* ═══════════════════════════════════════════
+   RESPONSIVE
+   ═══════════════════════════════════════════ */
+@media (max-width: 900px) {
+  nav { padding: 1rem 1.5rem; }
+  nav.scrolled { padding: 0.75rem 1.5rem; }
+  .nav-links {
+    display: none; flex-direction: column;
+    position: absolute; top: 100%; left: 0; right: 0;
+    background: var(--bg-glass);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-bottom: 1px solid var(--bg-glass-border);
+    padding: 1.5rem; gap: 1.25rem;
+  }
+  .nav-links.open { display: flex; }
+  .hamburger { display: flex; }
+
+  #hero { grid-template-columns: 1fr; padding: 6rem 1.5rem 3rem; text-align: center; }
+  #hero::before { width: 100%; height: 40%; top: auto; bottom: 0; clip-path: none; opacity: 0.5; }
+  .hero-eyebrow { justify-content: center; }
+  .hero-desc { margin: 0 auto 2rem; }
+  .hero-cta { justify-content: center; }
+  .hero-visual { margin-top: 2rem; }
+
+  #about .about-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+  .about-highlights { grid-template-columns: 1fr 1fr; }
+  .about-photo { margin: 0 auto; }
+  .about-photo-wrapper { display: flex; justify-content: center; }
+  .about-photo-wrapper::after { display: none; }
+  .about-aside { text-align: center; }
+  .about-contact-item { justify-content: center; }
+
+  .skills-layout { grid-template-columns: 1fr; gap: 2rem; }
+  .contact-grid { grid-template-columns: 1fr; gap: 3rem; }
+  section { padding: 4rem 1.5rem; }
+  .edu-grid { grid-template-columns: 1fr; }
+  .ach-gallery { grid-template-columns: 1fr; }
+
+  .acca-bar { flex-direction: column; text-align: center; gap: 1.25rem; }
+  .acca-divider { width: 60px; height: 1px; }
+
+  .theme-toggle { bottom: 1.5rem; right: 1.5rem; width: 46px; height: 46px; font-size: 1.1rem; }
+}
+@media (max-width: 600px) {
+  .about-highlights { grid-template-columns: 1fr; }
+  .hc-row { flex-wrap: wrap; }
+  footer { padding: 1.5rem; }
+  .cert-grid { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+
+<!-- Particle Canvas -->
+<canvas id="particles-canvas"></canvas>
+
+<!-- Dark Mode Toggle -->
+<button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode" onclick="toggleTheme()">🌙</button>
+
+<!-- Lightbox -->
+<div class="lightbox-overlay" id="lightbox" onclick="closeLightbox()">
+  <button class="lightbox-close" onclick="closeLightbox()">✕</button>
+  <img class="lightbox-img" id="lightboxImg" src="" alt="">
+  <p class="lightbox-caption" id="lightboxCaption"></p>
+</div>
+
+<!-- NAV -->
+<nav id="navbar">
+  <a class="nav-logo" href="#hero">MST</a>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="#about">About</a></li>
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#education">Education</a></li>
+    <li><a href="#projects">Certifications</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#achievements">Achievements</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <button class="hamburger" id="hamburger" onclick="toggleNav()" aria-label="Toggle navigation">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-text">
+    <p class="hero-eyebrow">Finance · Audit · Analytics</p>
+    <h1 class="hero-name">Merina<br><em>Sara Thomas</em></h1>
+    <p class="hero-desc">ACCA part-qualified finance professional with Big 4 audit experience, advanced analytics skills, and a Gold Medal academic record — available immediately in Ireland.</p>
+    <div class="hero-cta">
+      <a href="#experience" class="btn-primary"><span>View Experience</span></a>
+      <a href="#contact" class="btn-secondary">Get in Touch</a>
+    </div>
+  </div>
+  <div class="hero-visual">
+    <div class="hero-card">
+      <div class="hc-tag">At a Glance</div>
+      <div class="hc-stat">
+        <div class="hc-stat-num"><span class="count-up" data-target="10">0</span><span style="font-size:1.5rem">/13</span></div>
+        <div class="hc-stat-label">ACCA Exams Completed</div>
+      </div>
+      <hr class="hc-divider">
+      <div class="hc-row">
+        <div>
+          <div class="hc-mini-num">2+</div>
+          <div class="hc-mini-label">Years at Deloitte</div>
+        </div>
+        <div>
+          <div class="hc-mini-num">9.74</div>
+          <div class="hc-mini-label">BCom CGPA</div>
+        </div>
+        <div>
+          <div class="hc-mini-num"><span class="count-up" data-target="6">0</span></div>
+          <div class="hc-mini-label">Languages</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="section-header reveal">
+    <p class="section-label">About Me</p>
+    <h2 class="section-title">Where rigour<br>meets <em>curiosity</em></h2>
+  </div>
+  <div class="about-grid">
+    <div class="about-aside reveal">
+      <div class="about-photo-wrapper">
+        <img class="about-photo" src="images/portrait.jpg" alt="Merina Sara Thomas — Professional Portrait" loading="lazy">
+      </div>
+      <div class="about-contact-item">
+        <div class="aci-icon">📍</div>
+        <div class="aci-text">Galway, Ireland<br><span style="font-size:0.76rem;color:var(--muted)">Stamp 1G Visa · Available Immediately</span></div>
+      </div>
+      <div class="about-contact-item">
+        <div class="aci-icon">📞</div>
+        <div class="aci-text"><a href="tel:+353894595205">+353 89 459 5205</a></div>
+      </div>
+      <div class="about-contact-item">
+        <div class="aci-icon">✉️</div>
+        <div class="aci-text"><a href="mailto:merinasarathomas@gmail.com">merinasarathomas@gmail.com</a></div>
+      </div>
+      <div class="about-contact-item">
+        <div class="aci-icon">🔗</div>
+        <div class="aci-text"><a href="https://linkedin.com" target="_blank">LinkedIn Profile</a></div>
+      </div>
+    </div>
+    <div class="about-main reveal">
+      <p class="about-p">I'm a results-driven finance professional with hands-on audit experience at Deloitte, currently completing an MSc in International Accounting & Analytics at the University of Galway. My approach combines technical rigour — built through Big 4 audit work and advanced ACCA qualifications — with a genuine enthusiasm for data-driven decision-making.</p>
+      <p class="about-p">Having worked across international teams in both audit and compliance roles, I bring a global perspective to financial analysis, internal controls, and risk assessment. My academic record — Gold Medal, 9.74 CGPA — reflects the same attention to detail I apply to every professional engagement.</p>
+      <p class="about-p">I'm actively seeking Audit Analyst or Part-Qualified Accountant roles across Ireland where I can contribute immediately and grow toward full ACCA qualification.</p>
+      <div class="about-highlights">
+        <div class="ah-item">
+          <div class="ah-num">Big 4</div>
+          <div class="ah-label">Deloitte Experience</div>
+        </div>
+        <div class="ah-item">
+          <div class="ah-num">🥇</div>
+          <div class="ah-label">Gold Medalist · BCom</div>
+        </div>
+        <div class="ah-item">
+          <div class="ah-num">ACCA</div>
+          <div class="ah-label">10 of 13 exams passed</div>
+        </div>
+        <div class="ah-item">
+          <div class="ah-num">IFRS</div>
+          <div class="ah-label">Advanced Financial Reporting</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section id="experience">
+  <div class="section-header reveal">
+    <p class="section-label">Professional Experience</p>
+    <h2 class="section-title">Career <em>Journey</em></h2>
+  </div>
+  <div class="timeline">
+    <div class="tl-item">
+      <div class="tl-dot"></div>
+      <div class="tl-period">Jan 2025 – May 2025 · Hyderabad, India</div>
+      <div class="tl-role">Compliance Specialist (Audit Support)</div>
+      <div class="tl-company">Source One – Supporting Client: Deloitte</div>
+      <ul class="tl-bullets">
+        <li>Maintained adherence to organisational policies and regulatory requirements, applying procedural compliance standards directly analogous to external audit frameworks.</li>
+        <li>Conducted detailed data analysis to verify accuracy and integrity of records, mirroring substantive testing procedures used in financial audits.</li>
+        <li>Managed confidential employee data under GDPR and data-protection standards, ensuring zero compliance breaches across the engagement period.</li>
+        <li>Collaborated with international stakeholders across time zones to align processes and deliver audit-ready documentation, equivalent to global audit engagements.</li>
+        <li>Identified and implemented process improvements that increased accuracy and reduced cycle time, reflecting continuous improvement principles in audit operations.</li>
+        <li>Utilised R-Studio and AWS for data management and regulatory reporting tasks.</li>
+      </ul>
+    </div>
+
+    <div class="tl-item">
+      <div class="tl-dot"></div>
+      <div class="tl-period">Sep 2023 – May 2024 · Hyderabad, India</div>
+      <div class="tl-role">Audit Analyst</div>
+      <div class="tl-company">Deloitte</div>
+      <ul class="tl-bullets">
+        <li>Executed audit procedures to verify compliance with organisational policies and regulatory standards, gaining hands-on experience in a Big 4 assurance environment.</li>
+        <li>Performed quantitative data analysis on financial records to ensure accuracy and completeness, supporting the integrity of audit conclusions.</li>
+        <li>Safeguarded sensitive client information in line with data-protection standards, maintaining professional confidentiality throughout the engagement.</li>
+        <li>Engaged with international stakeholders to align cross-border audit processes, strengthening understanding of multi-jurisdictional compliance requirements.</li>
+      </ul>
+    </div>
+
+    <div class="tl-item">
+      <div class="tl-dot"></div>
+      <div class="tl-period">Jun 2024 – Jul 2024 · India</div>
+      <div class="tl-role">Content Writing / Marketing Intern</div>
+      <div class="tl-company">Kshitiksha Foundation (NGO)</div>
+      <ul class="tl-bullets">
+        <li>Earned an "S" grade (highest performance band) for consistently meeting quality and deadline standards.</li>
+        <li>Awarded a Certificate of Appreciation for outstanding contributions to social-awareness campaigns.</li>
+      </ul>
+    </div>
+
+    <div class="tl-item">
+      <div class="tl-dot"></div>
+      <div class="tl-period">Jun 2022 – Aug 2022 · India</div>
+      <div class="tl-role">Sales & Marketing Management Trainee</div>
+      <div class="tl-company">Agile Capital Services</div>
+      <ul class="tl-bullets">
+        <li>Analysed market trends and sales data to produce actionable insights informing strategic decisions.</li>
+        <li>Conducted comprehensive market research to identify high-potential clients, honing due-diligence and investigative competencies.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- EDUCATION -->
+<section id="education">
+  <div class="section-header reveal">
+    <p class="section-label">Education</p>
+    <h2 class="section-title">Academic <em>Foundation</em></h2>
+  </div>
+  <div class="edu-grid">
+    <div class="edu-card">
+      <div class="edu-period">Sep 2025 – Aug 2026</div>
+      <div class="edu-degree">MSc International Accounting & Analytics</div>
+      <div class="edu-school">University of Galway, Ireland</div>
+      <div class="edu-modules">Advanced IFRS · Complex Financial Statement Analysis · Audit Planning · Risk Assessment Procedures · Capital Structure & Investment Appraisal<br><br>
+      <em>Art Society Treasurer · Economics Society Sponsorship Lead & Vice PRO · Makerspace Volunteer</em></div>
+    </div>
+    <div class="edu-card">
+      <div class="edu-period">Jul 2023 – May 2025</div>
+      <div class="edu-degree">MCom International Finance</div>
+      <div class="edu-school">Jain Online University</div>
+      <div class="edu-badge">GPA 9.0 · Distinction</div>
+      <div class="edu-modules">Advanced Financial Accounting · Advanced Performance Management · Strategic Business Leadership · Financial Modelling · Audit & Assurance · Advanced Audit & Assurance<br><br>
+      16 specialised modules + distinction-level research project</div>
+    </div>
+    <div class="edu-card">
+      <div class="edu-period">Jun 2020 – Apr 2023</div>
+      <div class="edu-degree">BCom International Accounting & Finance</div>
+      <div class="edu-school">Loyola Academy Degree & PG College, India</div>
+      <div class="edu-badge">CGPA 9.74 · Gold Medalist 🥇</div>
+      <div class="edu-modules">International Accounting Standards · Corporate Finance · Auditing · Taxation · Management Accounting · Business Law · Quantitative Methods<br><br>
+      <em>Department Culture Representative</em></div>
+    </div>
+  </div>
+
+  <div class="acca-bar reveal">
+    <div>
+      <div class="acca-num">10<span>/13</span></div>
+      <div class="acca-label">Exams Completed</div>
+    </div>
+    <div class="acca-divider"></div>
+    <div>
+      <div class="acca-title">ACCA — Association of Chartered Certified Accountants</div>
+      <div class="acca-subtitle">Professional Level · Currently pursuing remaining 3 exams</div>
+    </div>
+  </div>
+</section>
+
+<!-- CERTIFICATIONS -->
+<section id="projects">
+  <div class="section-header reveal">
+    <p class="section-label">Certifications & Training</p>
+    <h2 class="section-title">Continuous <em>Learning</em></h2>
+  </div>
+
+  <!-- Photo gallery for certificates -->
+  <div class="ach-gallery" style="margin-bottom: 3rem;">
+    <div class="ach-card">
+      <div class="ach-card-img-wrapper">
+        <img class="ach-card-img" src="images/galway-cert1.jpg" alt="Employability Award at University of Galway" loading="lazy"
+             onclick="openLightbox(this.src, 'Employability Award — University of Galway')">
+      </div>
+      <div class="ach-card-body">
+        <div class="ach-card-title">Employability Award — University of Galway</div>
+        <div class="ach-card-desc">Recognised for demonstrating exceptional career-readiness and professional development during the MSc International Accounting & Analytics programme.</div>
+      </div>
+    </div>
+    <div class="ach-card">
+      <div class="ach-card-img-wrapper">
+        <img class="ach-card-img" src="images/galway-cert2.jpg" alt="ALIVE Volunteering Certificate at University of Galway" loading="lazy"
+             onclick="openLightbox(this.src, 'ALIVE Volunteering Certificate — University of Galway')">
+      </div>
+      <div class="ach-card-body">
+        <div class="ach-card-title">ALIVE Volunteering Certificate — University of Galway</div>
+        <div class="ach-card-desc">Awarded the ALIVE Certificate in recognition of voluntary contributions to the university and wider community during studies at University of Galway.</div>
+      </div>
+    </div>
+    <div class="ach-card">
+      <div class="ach-card-img-wrapper">
+        <img class="ach-card-img" src="images/makerspace.jpg" alt="Makerspace Volunteer — Scanning Artifacts" loading="lazy"
+             onclick="openLightbox(this.src, 'Makerspace Volunteer — Scanning Artifacts at University of Galway')">
+      </div>
+      <div class="ach-card-body">
+        <div class="ach-card-title">Makerspace Volunteer — Artifact Scanning</div>
+        <div class="ach-card-desc">Volunteering at the University of Galway Makerspace, scanning and digitising archaeological artifacts using specialist equipment.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="cert-grid">
+    <div class="cert-card">
+      <div class="cert-icon">📋</div>
+      <div class="cert-title">Audit and Due Diligence Foundations</div>
+      <div class="cert-org">NASBA</div>
+    </div>
+    <div class="cert-card">
+      <div class="cert-icon">💹</div>
+      <div class="cert-title">Virtual Internship Program — Financial Analysis & Data</div>
+      <div class="cert-org">JP Morgan (FORGE Platform)</div>
+    </div>
+    <div class="cert-card">
+      <div class="cert-icon">📊</div>
+      <div class="cert-title">Strategic Planning & Business Analysis</div>
+      <div class="cert-org">Oxford Home Study Centre</div>
+    </div>
+    <div class="cert-card">
+      <div class="cert-icon">🗣️</div>
+      <div class="cert-title">Business Communication Skills</div>
+      <div class="cert-org">Udemy</div>
+    </div>
+    <div class="cert-card">
+      <div class="cert-icon">🌱</div>
+      <div class="cert-title">Business and Sustainable Development</div>
+      <div class="cert-org">NPTEL</div>
+    </div>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills">
+  <div class="section-header reveal">
+    <p class="section-label">Skills</p>
+    <h2 class="section-title">Technical <em>Toolkit</em></h2>
+  </div>
+  <div class="skills-layout">
+    <div>
+      <div class="skill-group reveal">
+        <div class="skill-group-title">Audit & Finance</div>
+        <div class="skill-tags">
+          <span class="skill-tag">IFRS / Financial Reporting</span>
+          <span class="skill-tag">External Audit</span>
+          <span class="skill-tag">Internal Audit</span>
+          <span class="skill-tag">Risk Assessment</span>
+          <span class="skill-tag">Internal Controls</span>
+          <span class="skill-tag">Audit Planning</span>
+          <span class="skill-tag">Substantive Testing</span>
+          <span class="skill-tag">Capital Appraisal</span>
+          <span class="skill-tag">Financial Statement Analysis</span>
+          <span class="skill-tag">GDPR / Compliance</span>
+        </div>
+      </div>
+      <div class="skill-group reveal">
+        <div class="skill-group-title">Data & Analytics</div>
+        <div class="skill-tags">
+          <span class="skill-tag">Excel (Financial Modelling)</span>
+          <span class="skill-tag">Pivot Tables</span>
+          <span class="skill-tag">Power BI Dashboards</span>
+          <span class="skill-tag">R-Studio</span>
+          <span class="skill-tag">Quantitative Analysis</span>
+          <span class="skill-tag">Data Integrity Testing</span>
+        </div>
+      </div>
+      <div class="skill-group reveal">
+        <div class="skill-group-title">Cloud & Platforms</div>
+        <div class="skill-tags">
+          <span class="skill-tag">AWS</span>
+          <span class="skill-tag">MS Office Suite</span>
+          <span class="skill-tag">Prompt Engineering</span>
+        </div>
+      </div>
+    </div>
+    <div>
+      <div class="skill-group reveal">
+        <div class="skill-group-title">Languages</div>
+        <div class="lang-item"><span>English</span><span class="lang-level">Fluent</span></div>
+        <div class="lang-item"><span>Hindi</span><span class="lang-level">Fluent</span></div>
+        <div class="lang-item"><span>Telugu</span><span class="lang-level">Fluent</span></div>
+        <div class="lang-item"><span>Malayalam</span><span class="lang-level">Conversational</span></div>
+        <div class="lang-item"><span>Tamil</span><span class="lang-level">Conversational</span></div>
+        <div class="lang-item"><span>Urdu</span><span class="lang-level">Conversational</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ACHIEVEMENTS -->
+<section id="achievements">
+  <div class="section-header reveal">
+    <p class="section-label">Achievements</p>
+    <h2 class="section-title">Recognition & <em>Impact</em></h2>
+  </div>
+
+  <!-- Photo gallery for achievements -->
+  <div class="ach-gallery">
+    <div class="ach-card">
+      <div class="ach-card-img-wrapper">
+        <img class="ach-card-img" src="images/graduation.jpg" alt="Gold Medal Graduation — Loyola Academy" loading="lazy"
+             onclick="openLightbox(this.src, 'Gold Medalist — BCom International Accounting & Finance · CGPA 9.74 · Loyola Academy')">
+      </div>
+      <div class="ach-card-body">
+        <div class="ach-card-index">01</div>
+        <div class="ach-card-title">Gold Medalist — BCom International Accounting & Finance</div>
+        <div class="ach-card-desc">Graduated with CGPA 9.74, awarded Gold Medal for academic excellence at Loyola Academy Degree & PG College.</div>
+      </div>
+    </div>
+    <div class="ach-card">
+      <div class="ach-card-img-wrapper">
+        <img class="ach-card-img" src="images/inspire-award.jpg" alt="Inspire Award — Telangana State Government" loading="lazy"
+             onclick="openLightbox(this.src, 'Inspire Award — Telangana State Government · Outstanding Achievement')">
+      </div>
+      <div class="ach-card-body">
+        <div class="ach-card-index">02</div>
+        <div class="ach-card-title">Inspire Award — Telangana State Government</div>
+        <div class="ach-card-desc">Government of Telangana recognition for outstanding academic and personal achievement.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Remaining achievements as list -->
+  <div class="ach-list">
+    <div class="ach-item">
+      <div class="ach-index">03</div>
+      <div>
+        <div class="ach-title">National Webinar Speaker</div>
+        <div class="ach-desc">Invited speaker at national-level webinars organised by AIESEC and ACCA, representing subject matter expertise on finance and sustainable development.</div>
+      </div>
+    </div>
+    <div class="ach-item">
+      <div class="ach-index">04</div>
+      <div>
+        <div class="ach-title">Certificate of Appreciation — Kshitiksha Foundation</div>
+        <div class="ach-desc">Awarded for outstanding contributions to social-awareness campaigns, with an "S" grade (highest performance band).</div>
+      </div>
+    </div>
+    <div class="ach-item">
+      <div class="ach-index">05</div>
+      <div>
+        <div class="ach-title">MCom Distinction — Research Project</div>
+        <div class="ach-desc">Completed 16 specialised modules and a distinction-level research project with a GPA of 9.0 at Jain Online University.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="section-header reveal">
+    <p class="section-label">Get in Touch</p>
+    <h2 class="section-title">Let's <em>Connect</em></h2>
+  </div>
+  <div class="contact-grid">
+    <div>
+      <p class="contact-text">I'm actively seeking Audit Analyst, Part-Qualified Accountant, and Internal Audit roles across Ireland. Available to start immediately. Open to opportunities in Galway, Cork, Dublin, and beyond.</p>
+      <div class="contact-links">
+        <a href="tel:+353894595205" class="cl-item">
+          <div class="cl-icon">📞</div>
+          <div class="cl-text">+353 89 459 5205</div>
+        </a>
+        <a href="mailto:merinasarathomas@gmail.com" class="cl-item">
+          <div class="cl-icon">✉️</div>
+          <div class="cl-text">merinasarathomas@gmail.com</div>
+        </a>
+        <a href="https://linkedin.com" target="_blank" class="cl-item">
+          <div class="cl-icon">🔗</div>
+          <div class="cl-text">LinkedIn — Merina Sara Thomas</div>
+        </a>
+        <a href="#" class="cl-item">
+          <div class="cl-icon">📍</div>
+          <div class="cl-text">Galway, Ireland · Stamp 1G Visa</div>
+        </a>
+      </div>
+    </div>
+    <div class="contact-form">
+      <div class="cf-group">
+        <label for="contactName">Your Name</label>
+        <input type="text" id="contactName" placeholder="Jane Smith">
+      </div>
+      <div class="cf-group">
+        <label for="contactEmail">Your Email</label>
+        <input type="email" id="contactEmail" placeholder="jane@company.com">
+      </div>
+      <div class="cf-group">
+        <label for="contactMsg">Message</label>
+        <textarea id="contactMsg" rows="5" placeholder="I'd like to discuss an opportunity with you..."></textarea>
+      </div>
+      <button class="btn-send" onclick="sendMessage()"><span>Send Message</span></button>
+      <p class="send-note" id="sendNote"></p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p>© 2025 Merina Sara Thomas · Galway, Ireland · Built with care</p>
+</footer>
+
+<script>
+// ═══════════════════════════════════════════
+// PARTICLE SYSTEM
+// ═══════════════════════════════════════════
+(function() {
+  const canvas = document.getElementById('particles-canvas');
+  const ctx = canvas.getContext('2d');
+  let particles = [];
+  let animationId;
+  let mouse = { x: -9999, y: -9999 };
+
+  function resize() {
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+  }
+  resize();
+  window.addEventListener('resize', resize);
+
+  document.addEventListener('mousemove', (e) => {
+    mouse.x = e.clientX;
+    mouse.y = e.clientY;
+  });
+
+  class Particle {
+    constructor() {
+      this.reset();
+    }
+    reset() {
+      this.x = Math.random() * canvas.width;
+      this.y = Math.random() * canvas.height;
+      this.size = Math.random() * 2 + 0.5;
+      this.speedX = (Math.random() - 0.5) * 0.3;
+      this.speedY = (Math.random() - 0.5) * 0.3;
+      this.opacity = Math.random() * 0.4 + 0.1;
+      this.pulse = Math.random() * Math.PI * 2;
+    }
+    update() {
+      this.x += this.speedX;
+      this.y += this.speedY;
+      this.pulse += 0.01;
+
+      // Mouse repulsion
+      const dx = this.x - mouse.x;
+      const dy = this.y - mouse.y;
+      const dist = Math.sqrt(dx * dx + dy * dy);
+      if (dist < 120) {
+        const force = (120 - dist) / 120 * 0.5;
+        this.x += (dx / dist) * force;
+        this.y += (dy / dist) * force;
+      }
+
+      if (this.x < -10 || this.x > canvas.width + 10 ||
+          this.y < -10 || this.y > canvas.height + 10) {
+        this.reset();
+      }
+    }
+    draw() {
+      const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+      const color = isDark ? '160, 130, 200' : '92, 61, 143';
+      const dynamicOpacity = this.opacity * (0.7 + 0.3 * Math.sin(this.pulse));
+      ctx.beginPath();
+      ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+      ctx.fillStyle = `rgba(${color}, ${dynamicOpacity})`;
+      ctx.fill();
+    }
+  }
+
+  function init() {
+    const count = Math.min(Math.floor((canvas.width * canvas.height) / 12000), 100);
+    particles = Array.from({ length: count }, () => new Particle());
+  }
+
+  function connectParticles() {
+    const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+    const color = isDark ? '160, 130, 200' : '92, 61, 143';
+    for (let i = 0; i < particles.length; i++) {
+      for (let j = i + 1; j < particles.length; j++) {
+        const dx = particles[i].x - particles[j].x;
+        const dy = particles[i].y - particles[j].y;
+        const dist = Math.sqrt(dx * dx + dy * dy);
+        if (dist < 130) {
+          ctx.beginPath();
+          ctx.strokeStyle = `rgba(${color}, ${0.06 * (1 - dist / 130)})`;
+          ctx.lineWidth = 0.5;
+          ctx.moveTo(particles[i].x, particles[i].y);
+          ctx.lineTo(particles[j].x, particles[j].y);
+          ctx.stroke();
+        }
+      }
+    }
+  }
+
+  function animate() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    particles.forEach(p => { p.update(); p.draw(); });
+    connectParticles();
+    animationId = requestAnimationFrame(animate);
+  }
+
+  init();
+  animate();
+  window.addEventListener('resize', () => { init(); });
+})();
+
+// ═══════════════════════════════════════════
+// DARK MODE TOGGLE
+// ═══════════════════════════════════════════
+function toggleTheme() {
+  const html = document.documentElement;
+  const btn = document.getElementById('themeToggle');
+  const isDark = html.getAttribute('data-theme') === 'dark';
+
+  if (isDark) {
+    html.removeAttribute('data-theme');
+    btn.textContent = '🌙';
+    localStorage.setItem('theme', 'light');
+  } else {
+    html.setAttribute('data-theme', 'dark');
+    btn.textContent = '☀️';
+    localStorage.setItem('theme', 'dark');
+  }
+}
+
+// Persist theme
+(function() {
+  const saved = localStorage.getItem('theme');
+  if (saved === 'dark') {
+    document.documentElement.setAttribute('data-theme', 'dark');
+    document.getElementById('themeToggle').textContent = '☀️';
+  }
+})();
+
+// ═══════════════════════════════════════════
+// NAV
+// ═══════════════════════════════════════════
+window.addEventListener('scroll', () => {
+  document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 30);
+});
+
+function toggleNav() {
+  const nav = document.getElementById('navLinks');
+  const ham = document.getElementById('hamburger');
+  nav.classList.toggle('open');
+  ham.classList.toggle('active');
+}
+document.querySelectorAll('.nav-links a').forEach(a => {
+  a.addEventListener('click', () => {
+    document.getElementById('navLinks').classList.remove('open');
+    document.getElementById('hamburger').classList.remove('active');
+  });
+});
+
+// ═══════════════════════════════════════════
+// SCROLL REVEAL
+// ═══════════════════════════════════════════
+const revealObserver = new IntersectionObserver((entries) => {
+  entries.forEach((e, i) => {
+    if (e.isIntersecting) {
+      setTimeout(() => e.target.classList.add('visible'), i * 60);
+      revealObserver.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.1 });
+
+['.reveal', '.tl-item', '.edu-card', '.cert-card', '.ach-item', '.ach-card'].forEach(sel => {
+  document.querySelectorAll(sel).forEach(el => revealObserver.observe(el));
+});
+
+// Stagger cert cards
+document.querySelectorAll('.cert-card').forEach((card, i) => {
+  card.style.transitionDelay = `${i * 0.08}s`;
+});
+document.querySelectorAll('.ach-card').forEach((card, i) => {
+  card.style.transitionDelay = `${i * 0.12}s`;
+});
+document.querySelectorAll('.ach-item').forEach((item, i) => {
+  item.style.transitionDelay = `${i * 0.08}s`;
+});
+
+// ═══════════════════════════════════════════
+// ANIMATED COUNTERS
+// ═══════════════════════════════════════════
+const counterObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      const el = entry.target;
+      const target = parseInt(el.getAttribute('data-target'));
+      let current = 0;
+      const increment = target / 40;
+      const timer = setInterval(() => {
+        current += increment;
+        if (current >= target) {
+          el.textContent = target;
+          clearInterval(timer);
+        } else {
+          el.textContent = Math.ceil(current);
+        }
+      }, 40);
+      counterObserver.unobserve(el);
+    }
+  });
+}, { threshold: 0.5 });
+
+document.querySelectorAll('.count-up').forEach(el => counterObserver.observe(el));
+
+// ═══════════════════════════════════════════
+// LIGHTBOX
+// ═══════════════════════════════════════════
+function openLightbox(src, caption) {
+  const overlay = document.getElementById('lightbox');
+  const img = document.getElementById('lightboxImg');
+  const cap = document.getElementById('lightboxCaption');
+  img.src = src;
+  cap.textContent = caption || '';
+  overlay.classList.add('active');
+  document.body.style.overflow = 'hidden';
+}
+function closeLightbox() {
+  const overlay = document.getElementById('lightbox');
+  overlay.classList.remove('active');
+  document.body.style.overflow = '';
+}
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape') closeLightbox();
+});
+
+// ═══════════════════════════════════════════
+// CONTACT FORM
+// ═══════════════════════════════════════════
+function sendMessage() {
+  const note = document.getElementById('sendNote');
+  note.style.color = '#a87fe8';
+  note.textContent = '✓ Message sent! Merina will get back to you shortly.';
+  setTimeout(() => note.textContent = '', 4000);
+}
+
+// ═══════════════════════════════════════════
+// SMOOTH SCROLL ACTIVE NAV
+// ═══════════════════════════════════════════
+const sections = document.querySelectorAll('section[id]');
+const navItems = document.querySelectorAll('.nav-links a');
+const activeObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      navItems.forEach(a => {
+        a.style.color = '';
+        if (a.getAttribute('href') === '#' + entry.target.id) {
+          a.style.color = 'var(--purple)';
+        }
+      });
+    }
+  });
+}, { threshold: 0.3 });
+sections.forEach(s => activeObserver.observe(s));
+</script>
+</body>
+</html>
