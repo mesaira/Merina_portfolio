@@ -1807,11 +1807,43 @@ document.addEventListener('keydown', (e) => {
 // ═══════════════════════════════════════════
 // CONTACT FORM
 // ═══════════════════════════════════════════
-function sendMessage() {
+async function sendMessage() {
   const note = document.getElementById('sendNote');
+  const name = document.getElementById('contactName').value.trim();
+  const email = document.getElementById('contactEmail').value.trim();
+  const msg = document.getElementById('contactMsg').value.trim();
+
+  if (!name || !email || !msg) {
+    note.style.color = '#e87f7f';
+    note.textContent = '⚠ Please fill in all fields.';
+    return;
+  }
+
   note.style.color = '#a87fe8';
-  note.textContent = '✓ Message sent! Merina will get back to you shortly.';
-  setTimeout(() => note.textContent = '', 4000);
+  note.textContent = 'Sending...';
+
+  try {
+    const res = await fetch('https://formspree.io/f/xlgkbnrv', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+      body: JSON.stringify({ name, email, message: msg })
+    });
+
+    if (res.ok) {
+      note.style.color = '#7be89a';
+      note.textContent = '✓ Message sent! I\'ll get back to you shortly.';
+      document.getElementById('contactName').value = '';
+      document.getElementById('contactEmail').value = '';
+      document.getElementById('contactMsg').value = '';
+    } else {
+      throw new Error('Failed');
+    }
+  } catch {
+    note.style.color = '#e87f7f';
+    note.textContent = '✗ Something went wrong. Please email me directly.';
+  }
+
+  setTimeout(() => note.textContent = '', 5000);
 }
 
 // ═══════════════════════════════════════════
